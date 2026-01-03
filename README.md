@@ -93,8 +93,9 @@ Follow these instructions to set up the project locally on your machine.
   │     └── /images
   ├── App.js
   └── index.js
+```
 
-  ## 🎨 Customization
+## 🎨 Customization
 
 This template is designed to be easily white-labeled for different clients.
 
