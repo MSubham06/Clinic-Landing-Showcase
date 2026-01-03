@@ -2,7 +2,7 @@
 
 > A professional, responsive landing page template for medical clinics featuring doctor profiles, service details, and an integrated appointment booking system.
 
-![Project Status](https://img.shields.io/badge/Status-Active-success)
+![Project Status](https://img.shields.io/badge/Status-Developing-blue)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
 ## 📖 Overview
