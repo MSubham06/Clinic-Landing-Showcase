@@ -1,11 +1,11 @@
-# 🏥 Clinic Landing Showcase
+# Clinic Landing Showcase
 
 > A professional, responsive landing page template for medical clinics featuring doctor profiles, service details, and an integrated appointment booking system.
 
 ![Project Status](https://img.shields.io/badge/Status-Developing-blue)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
-## 📖 Overview
+## Overview
 
 This repository hosts a fully functional, patient-centric website template designed specifically for independent medical practitioners and clinics. It serves as a digital front door, combining trust-building elements (doctor profiles, clinic values) with conversion-focused tools (appointment booking, direct contact).
 
