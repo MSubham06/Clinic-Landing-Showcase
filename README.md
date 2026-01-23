@@ -41,7 +41,7 @@ This project is structured to provide a complete user journey for patients:
 |:---:|:---:|
 | ![Desktop Screenshot](path/to/desktop-image.png) | ![Mobile Screenshot](path/to/mobile-image.png) |
 
-*(Note: Replace `path/to/image.png` with actual screenshots of your project)*
+*(Note: Will update soon!)*
 
 ---
 
