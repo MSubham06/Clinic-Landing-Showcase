@@ -51,9 +51,9 @@ This project is structured to provide a complete user journey for patients:
 ## ✅ Step-by-Step To-Do List
 
 ### 1. Setup & Config
-- [x] Initialize Vite React project.
-- [x] Configure Tailwind CSS colors (Medical Blue palette).
-- [x] Install `lucide-react` for icons.
+- [ ] Initialize Vite React project.
+- [ ] Configure Tailwind CSS colors (Medical Blue palette).
+- [ ] Install `lucide-react` for icons.
 
 ### 2. Component Development
 - [ ] **Navbar:** Sticky header with logo and mobile hamburger menu.
@@ -68,16 +68,16 @@ This project is structured to provide a complete user journey for patients:
 ### 3. Integration & Polish
 - [ ] Connect all components to `App.jsx`.
 - [ ] Verify mobile view (Hamburger menu works? text readable?).
-- [ ] Add hover effects to buttons.
+- [x] Add hover effects to buttons.
 
 ---
 
 ## 🎒 The Gathering List (Pre-Build Requirements)
 
 ### Images (Stock or Placeholder)
-* 1x Hero Image (Doctor talking to patient or clean waiting room).
-* 1x Doctor Portrait (Professional headshot).
-* 1x Clinic Interior (Clean, bright).
+* [x] 1x Hero Image (Doctor talking to patient or clean waiting room).
+* [x] 1x Doctor Portrait (Professional headshot).
+* [x] 1x Clinic Interior (Clean, bright).
 
 ### Icons
 * We will use `lucide-react`.
