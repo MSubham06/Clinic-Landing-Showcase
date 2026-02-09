@@ -119,6 +119,32 @@ This project is structured to provide a complete user journey for patients:
 **5. Testimonials**
 * "The clinic is spotless and Dr. Bennett actually listens." — *Mark T.*
 * "Booking online was so easy. Highly recommended." — *Emily R.*
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to set up the project locally after cloning:
+
+1.  **Navigate to the project directory**
+    ```bash
+    cd lumina-health
+    ```
+
+2.  **Install dependencies**
+    *(This installs React, Vite, Tailwind, and other required tools)*
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server**
+    ```bash
+    npm run dev
+    ```
+
+4.  **Open in Browser**
+    Click the link shown in your terminal (usually `http://localhost:5173/`) to view the site.
+
 ---
 
 ## 🤝 Contact

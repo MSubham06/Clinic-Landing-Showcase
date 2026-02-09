@@ -4,8 +4,6 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowRight
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  // FIX: Switched back to lowercase to match the IDs in your section components
-  // (e.g., id="home", id="about", id="doctors")
   const quickLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About Us', href: '#about' },
@@ -71,10 +69,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Specialties (HIDDEN on Mobile) */}
+          {/* Column 3: Specialties (HIDDEN on Mobile, 2 Columns on Desktop) */}
+          {/* UPDATED: Added 'hidden md:block' to hide on mobile. Added 'grid-cols-2' for desktop. */}
           <div className="hidden md:block">
             <h3 className="text-white font-bold text-lg mb-6">Specialties</h3>
-            <ul className="space-y-3 text-sm">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
               {services.map((item) => (
                 <li key={item}>
                   <a href="#services" className="hover:text-primary transition-colors inline-block hover:translate-x-1 duration-200">
