@@ -38,24 +38,24 @@ const Services = () => {
       title: "Cardiology",
       description: "Advanced heart health monitoring, ECG services, and cardiovascular risk assessments.",
       icon: <HeartPulse size={32} className="text-white" />,
-      color: "bg-rose-500",
-      shadow: "shadow-rose-500/25"
+      color: "bg-blue-500",
+      shadow: "shadow-blue-500/25"
     },
     {
       id: 3,
       title: "Pediatrics",
       description: "Compassionate care for infants and children, from developmental milestones to sick visits.",
       icon: <Baby size={32} className="text-white" />,
-      color: "bg-orange-400",
-      shadow: "shadow-orange-400/25"
+      color: "bg-blue-500",
+      shadow: "shadow-blue-500/25"
     },
     {
       id: 4,
       title: "Vaccinations",
       description: "Safe and quick immunizations for flu, travel, and routine schedules for all ages.",
       icon: <Syringe size={32} className="text-white" />,
-      color: "bg-emerald-500",
-      shadow: "shadow-emerald-500/25"
+      color: "bg-blue-500",
+      shadow: "shadow-blue-500/25"
     }
   ];
 
