@@ -9,12 +9,12 @@ const Login = ({ onLogin }) => {
   const handleLogin = (e) => {
     e.preventDefault();
     
-    // --- UPDATED CREDENTIALS ---
-    const ADMIN_USER = "admin@lumina.com";
-    const ADMIN_PASS = "lumina123";
+    // --- ACCESS VARIABLES FROM .ENV FILE ---
+    const ADMIN_USER = import.meta.env.VITE_ADMIN_USER;
+    const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS;
 
     if (username === ADMIN_USER && password === ADMIN_PASS) {
-      onLogin(true); // Success!
+      onLogin(true);
     } else {
       setError("Invalid email or password. Access denied.");
     }
