@@ -19,7 +19,8 @@ const Navbar = () => {
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Doctors', href: '#doctors' },
-    { name: 'Contact', href: '#contact' },
+    // FIXED: Point to #appointment so it scrolls to the form
+    { name: 'Contact', href: '#appointment' }, 
   ];
 
   return (
@@ -37,7 +38,6 @@ const Navbar = () => {
           <img 
             src={Logo} 
             alt="Lumina Health Logo" 
-            // CHANGE: Removed 'shadow-lg' so it is completely flat
             className="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover group-hover:scale-105 transition-transform"
           />
           <span className="text-2xl md:text-3xl font-black text-primary tracking-tighter">
