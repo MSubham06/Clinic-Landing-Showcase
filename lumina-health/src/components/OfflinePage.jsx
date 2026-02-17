@@ -8,10 +8,6 @@ const OfflinePage = () => {
 
   const handleTryAgain = () => {
     setIsChecking(true);
-    // 1. Show "Checking..." state
-    // 2. Reload the page after a short delay
-    //    - If online: The app will load normally.
-    //    - If offline: The app reloads and this screen appears again.
     setTimeout(() => {
       window.location.reload();
     }, 1000);

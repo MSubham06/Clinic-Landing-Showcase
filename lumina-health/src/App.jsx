@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { RefreshCw, WifiOff } from 'lucide-react';
 // 👇 IMPORT THE IMAGE (Make sure the file is in src/assets/)
-import doctorImage from '../assets/offline-doctor.jpg';
+import doctorImage from './assets/offline-doctor.jpg';
 
 const OfflinePage = () => {
   const [isChecking, setIsChecking] = useState(false);
