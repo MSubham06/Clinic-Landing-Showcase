@@ -196,6 +196,10 @@ Example:
 http://localhost:5173/admin
 ```
 
+**Data Storage:** Google Sheets  
+**Live Sheet:** [View Appointment Data](https://docs.google.com/spreadsheets/d/13rFgvEm_Dnz4gSs0F7PipRpcUwDtrbMW_3j3YA0nTWE/edit?gid=0#gid=0)
+
+
 Development Credentials:
 
 | Role | Username | Password |
