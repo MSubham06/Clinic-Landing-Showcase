@@ -1,60 +1,89 @@
-import React, { useState } from 'react';
-import { RefreshCw, WifiOff } from 'lucide-react';
-// 👇 IMPORT THE IMAGE (Make sure the file is in src/assets/)
-import doctorImage from './assets/offline-doctor.jpg';
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Stats from './components/Stats';
+import About from './components/About';
+import Services from './components/Services';
+import Facilities from './components/Facilities';
+import Doctors from './components/Doctors';
+import Appointment from './components/Appointment';
+import Footer from './components/Footer'; 
+import DoctorBio from './components/DoctorBio';
+import ReceptionDashboard from './components/ReceptionDashboard';
+import Login from './components/Login';
+import OfflinePage from './components/OfflinePage';
 
-const OfflinePage = () => {
-  const [isChecking, setIsChecking] = useState(false);
+// 👇 FIX: Use ./assets because App.jsx is in src/
+import offlineDoctorImg from './assets/offline-doctor.jpg';
 
-  const handleTryAgain = () => {
-    setIsChecking(true);
-    // 1. Show "Checking..." state
-    // 2. Reload the page after a short delay
-    //    - If online: The app will load normally.
-    //    - If offline: The app reloads and this screen appears again.
-    setTimeout(() => {
-      window.location.reload();
-    }, 1000);
-  };
-
+const Home = () => {
   return (
-    // SOLID WHITE BACKGROUND - Covers the entire screen (z-9999)
-    <div className="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center p-6 text-center">
-      
-      {/* --- IMAGE SECTION --- */}
-      <div className="mb-8 relative">
-        <img 
-          src={doctorImage} 
-          alt="Doctor Sleeping Offline" 
-          className="w-64 md:w-80 object-contain mx-auto mix-blend-multiply"
-        />
-        
-        {/* Optional: Small floating wifi icon next to the image */}
-        <div className="absolute top-0 right-10 animate-bounce">
-            <WifiOff className="text-gray-400" size={24} />
-        </div>
-      </div>
-
-      {/* --- TEXT SECTION --- */}
-      <h1 className="text-3xl font-black text-gray-900 mb-2 tracking-tight">
-        You're Offline
-      </h1>
-      <p className="text-gray-500 font-medium mb-8 max-w-xs mx-auto">
-        We can't reach the server. Check your internet connection to wake us up.
-      </p>
-
-      {/* --- BUTTON SECTION --- */}
-      <button 
-        onClick={handleTryAgain}
-        disabled={isChecking}
-        className="flex items-center gap-3 px-8 py-3 bg-gray-900 text-white rounded-full font-bold hover:bg-gray-800 transition-all active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed shadow-lg"
-      >
-        <RefreshCw size={20} className={isChecking ? 'animate-spin' : ''} />
-        {isChecking ? 'Reconnecting...' : 'Try Again'}
-      </button>
-
-    </div>
+    <>
+      <Navbar />
+      <Hero />
+      <Stats />
+      <About />
+      <Services />
+      <Facilities />
+      <Doctors />
+      <Appointment />
+      <Footer />
+    </>
   );
 };
 
-export default OfflinePage;
+function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
+  return (
+    <div className="font-sans text-gray-900 bg-background antialiased selection:bg-secondary/30 select-none cursor-default">
+      
+      {/* Preload the offline image so it's ready when internet cuts out */}
+      <img src={offlineDoctorImg} alt="preload" style={{ display: 'none' }} />
+
+      {/* Show Offline Page if disconnected */}
+      {!isOnline && <OfflinePage />}
+
+      <Routes>
+        {/* PUBLIC: Main Landing Page */}
+        <Route path="/" element={<Home />} />
+        
+        {/* PUBLIC: Doctor Bio Page */}
+        <Route path="/doctor-bio" element={<DoctorBio />} />
+
+        {/* PRIVATE: Reception Dashboard */}
+        <Route 
+          path="/admin" 
+          element={
+            isAuthenticated ? (
+              <ReceptionDashboard />
+            ) : (
+              <Login onLogin={setIsAuthenticated} />
+            )
+          } 
+        />
+
+        {/* Catch-all: Redirect unknown paths to Home */}
+        <Route path="*" element={<Navigate to="/" />} />
+
+      </Routes>
+    </div>
+  );
+}
+
+export default App;
